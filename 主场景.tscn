@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dsxqa7gek4bhf"]
+
+[ext_resource type="PackedScene" uid="uid://b1i14ce0nr8ql" path="res://Scenes/CardUI/control.tscn" id="1_ynihe"]
+
+[node name="主场景" type="Node2D" unique_id=1255503417]
+
+[node name="Control" type="Control" parent="." unique_id=1897619897]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control2" parent="." unique_id=1550463354 node_paths=PackedStringArray("follow_target") instance=ExtResource("1_ynihe")]
+offset_right = 222.0
+offset_bottom = 342.0
+follow_target = NodePath("../Control")
