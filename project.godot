@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameDemo"
-run/main_scene="uid://dsxqa7gek4bhf"
+run/main_scene="uid://d4ccrr84dhvgg"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 

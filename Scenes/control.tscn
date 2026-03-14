@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1i14ce0nr8ql"]
 
-[ext_resource type="Script" uid="uid://nvvso2qn2t2o" path="res://Scenes/CardUI/卡牌拖拽脚本.gd" id="1_4rjbe"]
+[ext_resource type="Script" uid="uid://nvvso2qn2t2o" path="res://Script/UI/CardUI/卡牌拖拽脚本.gd" id="1_4rjbe"]
 [ext_resource type="Texture2D" uid="uid://dld8dhw00k2y4" path="res://icon.svg" id="2_q35p0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntkae"]
@@ -63,16 +63,17 @@ grow_vertical = 2
 text = "卡牌名称以及介绍"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=380429724]
+[node name="Button" type="Button" parent="Panel" unique_id=380429724]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.005
 anchor_bottom = 0.994
-offset_left = 7.0
-offset_top = 7.0
-offset_right = -7.095001
-offset_bottom = -6.947998
+offset_left = 9.0
+offset_top = 6.0
+offset_right = -5.095001
+offset_bottom = -7.947998
 theme = SubResource("Theme_ntkae")
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.50980395)
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Panel/Button" to="." method="_on_button_button_up"]

@@ -12,7 +12,7 @@ var tween:Tween
 func _ready() -> void:
 	button.mouse_entered.connect(_on_mouse_hovered.bind(true))
 	button.mouse_exited.connect(_on_mouse_hovered.bind(false))
-	button.pressed.connect(_on_mouse_hovered)
+	button.pressed.connect(_on_button_presssed)
 	button.pivot_offset_ratio = Vector2(0.5,0.5)
 	
 func _on_mouse_hovered(hovered : bool ) -> void:

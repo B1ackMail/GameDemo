@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4ccrr84dhvgg"]
 
-[ext_resource type="Script" uid="uid://bbvqrf2sgfu46" path="res://Scenes/TestScript.gd" id="1_wvkdh"]
+[ext_resource type="Script" uid="uid://bbvqrf2sgfu46" path="res://Script/UI/CardUI/TestScript.gd" id="1_wvkdh"]
 [ext_resource type="Script" uid="uid://wv5dc346c1ku" path="res://Script/UI/butten_effects.gd" id="2_xxbmd"]
 
 [node name="TestScene" type="Control" unique_id=2143740633]
@@ -38,10 +38,10 @@ mouse_filter = 2
 
 [node name="Button2" type="Button" parent="." unique_id=596056791]
 layout_mode = 0
-offset_left = 443.0
-offset_top = 326.0
-offset_right = 673.0
-offset_bottom = 395.0
+offset_left = 433.0
+offset_top = 54.0
+offset_right = 663.0
+offset_bottom = 123.0
 
 [node name="ButtonEffectsModule" type="Node" parent="Button2" unique_id=1007149394]
 script = ExtResource("2_xxbmd")

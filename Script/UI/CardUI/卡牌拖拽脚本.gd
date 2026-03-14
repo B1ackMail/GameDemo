@@ -1,5 +1,5 @@
 extends Control
-
+class_name CardDrag
 #这块就是弹簧函数的相关默认参数，可以修改
 var velocity = Vector2.ZERO
 var damping = 0.35
@@ -8,7 +8,6 @@ var stiffeness = 500
 enum CardState {follow,drag} #枚举出两种卡牌的两种状态
 @export var cardcurrentstate:CardState = CardState.follow #默认状态为跟随鼠标
 @export var follow_target:Node
-
 
 func _process(delta:float) ->void:
 	match cardcurrentstate:

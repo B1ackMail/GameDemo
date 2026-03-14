@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxwbcaeysgf1x"]
 
-[ext_resource type="Script" uid="uid://bvqgcbsn8fa3n" path="res://Scenes/card.gd" id="1_0qqmn"]
+[ext_resource type="Script" uid="uid://bvqgcbsn8fa3n" path="res://Script/UI/CardUI/card.gd" id="1_0qqmn"]
+[ext_resource type="Script" uid="uid://nvvso2qn2t2o" path="res://Script/UI/CardUI/卡牌拖拽脚本.gd" id="2_wf8id"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf8id"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,12 +22,25 @@ offset_right = 100.0
 offset_bottom = 160.0
 script = ExtResource("1_0qqmn")
 
-[node name="Panel" type="Panel" parent="." unique_id=676604260]
+[node name="Panel" type="Panel" parent="." unique_id=676604260 node_paths=PackedStringArray("follow_target")]
 custom_minimum_size = Vector2(100, 160)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 100.0
+offset_bottom = 160.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wf8id")
+script = ExtResource("2_wf8id")
+follow_target = NodePath("..")
+
+[node name="Button" type="Button" parent="Panel" unique_id=1019954938]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 157.0
 
 [connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]
+[connection signal="button_down" from="Panel/Button" to="Panel" method="_on_button_button_down"]
+[connection signal="button_up" from="Panel/Button" to="Panel" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Panel/Button" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Button" to="." method="_on_panel_mouse_exited"]
