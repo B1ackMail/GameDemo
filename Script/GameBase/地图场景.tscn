@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ch017iv2okf28"]
+
+[ext_resource type="PackedScene" uid="uid://bahml3c6swl45" path="res://Script/GameBase/玩家碰撞胶囊.tscn" id="1_dudtq"]
+
+[sub_resource type="Environment" id="Environment_ikxrc"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_s85pe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ikxrc"]
+size = Vector3(1, 1.0595703, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8x02"]
+albedo_color = Color(0, 0.96436757, 0.099405356, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dudtq"]
+material = SubResource("StandardMaterial3D_t8x02")
+
+[node name="Node3D" type="Node3D" unique_id=2004257751]
+
+[node name="摄影机" type="Camera3D" parent="." unique_id=1492296336]
+transform = Transform3D(0.71921587, 0.26243126, -0.64331824, 0.035385378, 0.9108848, 0.4111408, 0.693885, -0.31846306, 0.6458366, -14.396796, 8.399178, 13.998726)
+projection = 1
+fov = 74.72488
+size = 9.289586
+
+[node name="光源" type="DirectionalLight3D" parent="." unique_id=2063814771]
+transform = Transform3D(0.88133645, 0.22360936, -0.41622698, 0, 0.88092375, 0.4732581, 0.47248924, -0.41709962, 0.7763902, -8.610664, 5.075524, 7.763338)
+layers = 5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=375126230]
+environment = SubResource("Environment_ikxrc")
+camera_attributes = SubResource("CameraAttributesPractical_s85pe")
+
+[node name="CharacterBody3D" parent="." unique_id=247343097 instance=ExtResource("1_dudtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.840907, 0)
+
+[node name="地块碰撞体积1" type="StaticBody3D" parent="." unique_id=1043734622]
+transform = Transform3D(16.102951, 0, 0, 0, 0.38025892, 0, 0, 0, 14.856581, 0.016547322, 0, -0.013243675)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="地块碰撞体积1" unique_id=1874732114]
+shape = SubResource("BoxShape3D_ikxrc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="地块碰撞体积1/CollisionShape3D" unique_id=515872147]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+mesh = SubResource("BoxMesh_dudtq")
+
+[node name="地块碰撞体积2" type="StaticBody3D" parent="." unique_id=410157944]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="地块碰撞体积2" unique_id=340921227]
+transform = Transform3D(6.230813, 0, 0, 0, 1, 0, 0, 0, 16.823229, 4.7683716e-07, 0.41512775, 11.061631)
+shape = SubResource("BoxShape3D_ikxrc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="地块碰撞体积2/CollisionShape3D" unique_id=1667350821]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+mesh = SubResource("BoxMesh_dudtq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=522150016]

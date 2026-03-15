@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bahml3c6swl45"]
+
+[ext_resource type="Script" uid="uid://do1bn87jc1ybd" path="res://Script/GameBase/玩家移动脚本.gd" id="1_fqr1l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tmcyb"]
+radius = 0.49169922
+height = 1.9946289
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqr1l"]
+albedo_color = Color(0.9623341, 0.10392038, 9.62615e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ddpm"]
+
+[node name="玩家角色" type="CharacterBody3D" unique_id=247343097]
+script = ExtResource("1_fqr1l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1223562728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7732544, 0)
+shape = SubResource("CapsuleShape3D_tmcyb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=78770358]
+material_override = SubResource("StandardMaterial3D_fqr1l")
+transparency = 1.0
+mesh = SubResource("CapsuleMesh_0ddpm")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1401972943]

@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bx7npq0x1y8e4"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"角色站立",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"角色行走",
+"speed": 5.0
+}]
