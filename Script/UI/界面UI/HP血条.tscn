@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ccqlbk6or2s0a"]
+
+[ext_resource type="Texture2D" uid="uid://bcne8lmk8uj3k" path="res://Script/UI/HP血条框.png" id="1_dnbmn"]
+[ext_resource type="Script" uid="uid://ddrlx3qd24gfy" path="res://Script/UI/界面UI/HP.gd" id="1_h0thj"]
+[ext_resource type="Texture2D" uid="uid://cyjx0lsgb43ec" path="res://Script/UI/HP血条空.png" id="2_7j1k4"]
+[ext_resource type="Texture2D" uid="uid://yaall8pr0pud" path="res://Script/UI/HP满血条.png" id="2_ch7hk"]
+[ext_resource type="Texture2D" uid="uid://e2b15u1uarr2" path="res://Script/UI/HP扣血条.png" id="3_h0thj"]
+[ext_resource type="Script" uid="uid://bh228btsfjusn" path="res://Script/UI/界面UI/hp扣除.gd" id="4_7j1k4"]
+
+[node name="Node" type="Node" unique_id=1620605190]
+script = ExtResource("1_h0thj")
+
+[node name="HP" type="Node2D" parent="." unique_id=490677760]
+
+[node name="HP后" type="Sprite2D" parent="HP" unique_id=20162691]
+position = Vector2(617.49994, 298)
+scale = Vector2(1.0017985, 1)
+texture = ExtResource("2_7j1k4")
+
+[node name="HP扣除" type="TextureProgressBar" parent="HP" unique_id=69105936]
+offset_left = 336.0
+offset_top = 189.0
+offset_right = 897.0
+offset_bottom = 411.0
+step = -1.0
+value = 100.0
+texture_progress = ExtResource("3_h0thj")
+script = ExtResource("4_7j1k4")
+
+[node name="HP当前" type="TextureProgressBar" parent="HP" unique_id=1760612204]
+offset_left = 342.0
+offset_top = 255.0
+offset_right = 895.0
+offset_bottom = 332.0
+step = -1.0
+value = 100.0
+texture_progress = ExtResource("2_ch7hk")
+
+[node name="HP前" type="Sprite2D" parent="HP" unique_id=1305921929]
+top_level = true
+position = Vector2(573.49994, 324.74997)
+scale = Vector2(0.99558306, 1.0939087)
+texture = ExtResource("1_dnbmn")
+
+[connection signal="changed" from="HP/HP当前" to="HP/HP扣除" method="_on_hp当前_changed"]
+[connection signal="value_changed" from="HP/HP当前" to="HP/HP扣除" method="_on_hp当前_value_changed"]
