@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://81wosjdiba51"]
+
+[ext_resource type="Script" uid="uid://cbm4sl27nwrbl" path="res://Script/UI/Menu/Menu.gd" id="1_t0t4f"]
+[ext_resource type="Script" uid="uid://wv5dc346c1ku" path="res://Script/UI/butten_effects.gd" id="2_gfjwm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start"]
+bg_color = Color(0.0862745, 0.129412, 0.247059, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0588235, 0.203922, 0.376471, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.0588235, 0.0941176, 0.164706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0588235, 0.203922, 0.376471, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.117647, 0.188235, 0.333333, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.141176, 0.368627, 0.639216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_6pedr"]
+font_size = 31
+
+[node name="Menu" type="Control" unique_id=1999469888]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t0t4f")
+
+[node name="Background" type="ColorRect" parent="." unique_id=953409942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.101961, 0.180392, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1063559996]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 80
+
+[node name="MainLayout" type="VBoxContainer" parent="MarginContainer" unique_id=1598135815]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleSection" type="VBoxContainer" parent="MarginContainer/MainLayout" unique_id=495131752]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GameLogo" type="TextureRect" parent="MarginContainer/MainLayout/TitleSection" unique_id=1427770724]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+stretch_mode = 5
+
+[node name="GameTitle" type="Label" parent="MarginContainer/MainLayout/TitleSection" unique_id=1474672417]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "卡牌冒险"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="MarginContainer/MainLayout/TitleSection" unique_id=631370212]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.7, 1)
+theme_override_font_sizes/font_size = 24
+text = "策略 · 冒险 · 传奇"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/MainLayout" unique_id=1925568596]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="MenuButtons" type="VBoxContainer" parent="MarginContainer/MainLayout" unique_id=1230705732]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/MainLayout/MenuButtons" unique_id=1302084776]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_start")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+text = "开始游戏"
+
+[node name="ButtonEffectsModule" type="Node" parent="MarginContainer/MainLayout/MenuButtons/StartButton" unique_id=404238382]
+script = ExtResource("2_gfjwm")
+anim_duration = 0.08
+scale_amount = Vector2(1.08, 1.08)
+rotation_amout = 2.0
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/MainLayout/MenuButtons" unique_id=599678603]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_start")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+text = "继续游戏"
+
+[node name="ButtonEffectsModule" type="Node" parent="MarginContainer/MainLayout/MenuButtons/ContinueButton" unique_id=969998762]
+script = ExtResource("2_gfjwm")
+anim_duration = 0.08
+scale_amount = Vector2(1.08, 1.08)
+rotation_amout = 2.0
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/MainLayout/MenuButtons" unique_id=990385533]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_start")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+text = "设置"
+
+[node name="ButtonEffectsModule" type="Node" parent="MarginContainer/MainLayout/MenuButtons/SettingsButton" unique_id=1857696935]
+script = ExtResource("2_gfjwm")
+anim_duration = 0.08
+scale_amount = Vector2(1.08, 1.08)
+rotation_amout = 2.0
+
+[node name="QuitButton" type="Button" parent="MarginContainer/MainLayout/MenuButtons" unique_id=2007681225]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_start")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+text = "退出游戏"
+
+[node name="ButtonEffectsModule" type="Node" parent="MarginContainer/MainLayout/MenuButtons/QuitButton" unique_id=1685760091]
+script = ExtResource("2_gfjwm")
+anim_duration = 0.08
+scale_amount = Vector2(1.08, 1.08)
+rotation_amout = 2.0
+
+[node name="VersionLabel" type="Label" parent="." unique_id=1913606205]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -50.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.5, 1)
+theme_override_font_sizes/font_size = 18
+text = "v0.1.0 Alpha"
+horizontal_alignment = 2
+
+[node name="NotificationLabel" type="Label" parent="." unique_id=413601978]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -82.0
+offset_right = 383.0
+offset_bottom = -30.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9, 0.3, 0.3, 0)
+theme_override_font_sizes/font_size = 20
+text = "无可用存档"
+label_settings = SubResource("LabelSettings_6pedr")
